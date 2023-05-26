@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+</head>
+<body>
+    <div class="text-center text-dark w-50 container">
+        <h1>Bank Account Create Form</h1>
+        <form class="bg-light border border-danger p-5">
+                <input type="text" id="ac" class="form-control mt-3 p-2 field" placeholder="Account Number">
+                <input type="text" id="username" class="form-control p-2 mt-3 field" placeholder="UserName">
+                <input type="password" id="pw" class="form-control p-2 mt-3 field" placeholder="Create Password">
+                <input type="password" id="cpw" class="form-control p-2 mt-3 field" placeholder="Confim Password">
+            <div class="text-center p-2">
+                <button type="submit" onclick="create()" class="btn btn-outline-success ">
+                    Create Account
+                </button>
+                <button type="button" routerLink="" class="btn btn-outline-success me-5">
+                    Login
+                </button>
+            </div>
+        </form>
+</div>
+</body>
+<script>
+    function create(){
+    acno=ac.value
+    if(acno in localStorage){
+        window.location=("index.html")
+        alert("Acount Already Present")
+    }
+    else{
+        pass1=pw.value
+        pass2=cpw.value
+        if(pass1==pass2){
+            user={acno,uname:username.value,pws:pass1}
+            localStorage.setItem(acno,JSON.stringify(user))
+            window.location=("index.html")
+            alert("Account has been create")
+        }
+        else{
+            alert("Incorrect Password")
+        }
+    }
+}
+</script>
+</html>
