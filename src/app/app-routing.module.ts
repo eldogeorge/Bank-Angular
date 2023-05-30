@@ -7,7 +7,7 @@ import { HomeComponent } from './home/home.component';
 const routes: Routes = [
   {path:'',component:LoginpageComponent},//to link landing page with empty path means localhost:4200
   {path:'register',component:RegisterComponent},//to link next page with pathName means localhost:4200/register
-  {path:'homepage',component:HomeComponent}
+  {path:'home',component:HomeComponent}
 ];
 
 @NgModule({

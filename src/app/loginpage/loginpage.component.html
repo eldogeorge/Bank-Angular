@@ -7,13 +7,13 @@
                     <h3 class="heading">User Login </h3>
                 </div>
                 <div class="l1">
-                    <input type="text" (change)="acnochange($event)" name="name" class="field" id="acno" [placeholder]="pacdata">
+                    <input type="text"  name="name" class="field" id="acno" [placeholder]="pacdata">
                 </div>
                 <div class="l1">
-                    <input type="password" name="name" class="field" #psw formControlName="psw" placeholder="Enter your Password">
+                    <input type="password" name="name" class="field"  placeholder="Enter your Password">
                 </div>
                 <div class="lb1">
-                    <button (click)="login(psw)" type="button" class="btn btn-outline-primary">Login</button>
+                    <button (click)="login()" type="button" class="btn btn-outline-primary">Login</button>
                     don't have account?
                     <a href="" style="text-decoration: none;color: rgb(24, 19, 114);" routerLink="register"> Create
                         Account</a>
