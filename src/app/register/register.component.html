@@ -1,7 +1,7 @@
 <div class="bigbox">
     <h1>Bank Account Create Form</h1>
     <form class='f1'>
-        <input type="text" [(ngModel)]="ano" id="ac" name="acn" class="form-control mt-5 p-2"
+        <input type="text" [(ngModel)]="ano" id="ac" name="acn" class="form-control mt-5 p-2"   
             placeholder="Account Number">
         <input type="text" [(ngModel)]="uname" id="username" name="usnam" class="form-control p-2 mt-2"
             placeholder="UserName">
@@ -10,7 +10,7 @@
         <input type="password" id="cpw" [(ngModel)]="cps" name="cp" class="form-control p-2 mt-3"
             placeholder="Confim Password">
         <div class="text-center p-2">
-            <button type="submit" (click)="create()" class="blg1">
+            <button type="submit" (click)="signup()" class="blg1">
                 Create Account
             </button>
             <button type="button" routerLink="" class="blg">

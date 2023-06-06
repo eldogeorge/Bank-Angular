@@ -12,24 +12,37 @@ export class LoginpageComponent implements OnInit{
   pacdata="Enter your Account Number"
   serviceData:any
 
+  acno:any
+  psw:any
+
   constructor(private rout:Router,private ds:DataService){}//Dependency Injection
 
   ngOnInit():void{
-    this.serviceData=this.ds.sdata
-    console.log(this.serviceData);
-    this.ds.smethod()
+    // this.serviceData=this.ds.sdata
+    // console.log(this.serviceData);
+    // this.ds.smethod()
     
   }
-  login(): void{
-    // console.log(a.value);
-    
+  login(){
+    // console.log(a.value);    
     // alert('login clicked')
-    this.rout.navigateByUrl('home')//Redirection  In Angular
 
+    // console.log(this.acno);
+    // console.log(this.psw);
 
+    var acno=this.acno
+    var psw=this.psw
+    this.ds.login(acno,psw).subscribe((result:any)=>{
+      alert(result.message)
+      this.rout.navigateByUrl('home')//Redirection  In Angular
+
+    },
+      result=>{
+        alert(result.error.message)
+      }
+    )
   }
   acnochange(event:any){//event type is any type (like string int) event is fixed
     console.log(event.target.value);
-    
   }
 }
